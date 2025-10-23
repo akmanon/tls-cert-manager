@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - cert.tlscertmanager.local
+  resources:
+  - tlscertificates
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cert.tlscertmanager.local
+  resources:
+  - tlscertificates/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cert.tlscertmanager.local
+  resources:
+  - tlscertificates/status
+  verbs:
+  - get
+  - patch
+  - update

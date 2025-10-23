@@ -1,0 +1,12 @@
+apiVersion: cert.tlscertmanager.local/v1
+kind: TLSCertificate
+metadata:
+  labels:
+    app.kubernetes.io/name: tls-cert-manager
+    app.kubernetes.io/managed-by: kustomize
+  name: tlscertificate-sample
+spec:
+  # TODO(user): Add fields here
+  SecretName: "mytls"
+  ValidityDays: 90
+  commonName: "myapp.local"
